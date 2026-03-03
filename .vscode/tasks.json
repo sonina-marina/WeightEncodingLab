@@ -1,0 +1,14 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build FLTK",
+      "type": "shell",
+      "command": "g++ src/main.cpp src/UI.cpp -o build/app $(fltk-config --cxxflags --ldflags)",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
