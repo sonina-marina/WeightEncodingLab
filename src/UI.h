@@ -58,6 +58,7 @@ class MainWindow {
 
     static void onInput(Fl_Widget*, void*);
     static void onCode(Fl_Widget*, void*);
+    static void clearOnDoubleCode(Fl_Widget*, void*);
     static void onDeCode(Fl_Widget*, void*);
     static void onExit(Fl_Widget*, void*);
     static void clearOnInput(Fl_Widget*, void*);

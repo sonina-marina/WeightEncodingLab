@@ -184,7 +184,7 @@ class WeightedCode {
                 }
             }
             else {
-                std::cout << "other" << "\n";
+                //std::cout << "other" << "\n";
                 int position;
                 //std::cout << newM - m << "\n";
                 if (newM - m == 1) { // newM > by 1
@@ -204,7 +204,7 @@ class WeightedCode {
                     ans.result = "";
                     return ans;
                 }
-                std::cout << countWeight(str);
+                //std::cout << countWeight(str);
                 if (countWeight(str) == m) {
                     ans.r = 1;
                     ans.J = std::to_string(position);
@@ -213,7 +213,6 @@ class WeightedCode {
                 else {
                     ans.r = 2;
                     ans.J = "";
-                    std::cout << "другой вывод\n";
                     ans.result = "Один информационный и один проверочный символы";
                 }
             }

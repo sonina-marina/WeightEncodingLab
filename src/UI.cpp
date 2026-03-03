@@ -69,7 +69,6 @@ MainWindow::MainWindow(int w, int h, const char* name) {
     codeInput = new Fl_Input(firstBorder, yCoord, longField, fieldHight, "Принятая кодовая комбинация");
     codeInput->align(FL_ALIGN_TOP);
     codeInput->when(FL_WHEN_CHANGED);
-    codeInput->callback(clearOnCode, this);
 
     btnDeCode = new Fl_Button(secondBorder, yCoord, shortField, fieldHight, "ДЕКОДИРОВАТЬ");
     btnDeCode->color(FL_WHITE);
@@ -126,7 +125,7 @@ void MainWindow::onInput(Fl_Widget*, void* userdata) {
     ui->ROutput->value(codingRes.R.c_str());
 }
 
-void MainWindow::onCode(Fl_Widget*, void* userdata) {
+void MainWindow::onCode(Fl_Widget* w, void* userdata) {
     auto* ui = static_cast<MainWindow*>(userdata);
 
     if (infString.empty()) {
@@ -144,6 +143,8 @@ void MainWindow::onCode(Fl_Widget*, void* userdata) {
         ui->aChoice->add(value.c_str());
     }
     ui->aChoice->redraw();
+
+    clearOnCode(w, userdata);
 }
 
 void MainWindow::onDeCode(Fl_Widget*, void* userdata) {
@@ -208,6 +209,11 @@ void MainWindow::clearOnCode(Fl_Widget*, void* userdata) {
     ui->rOutput->value("");
     ui->JOutput->value("");
     ui->resultOutput->value("");
+    ui->m2Output->redraw();
+    ui->R2Output->redraw();
+    ui->rOutput->redraw();
+    ui->JOutput->redraw();
+    ui->resultOutput->redraw();
     ui->eChoice->clear();
     ui->eChoice->redraw();
 }
