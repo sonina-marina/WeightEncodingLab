@@ -5,7 +5,7 @@
 #include "UI.h"
 
 int main() {
-    MainWindow window(640, 510, "Расширенный код Хэмминга");
+    MainWindow window(760, 510, "Расширенный код Хэмминга");
 
     window.show();
 

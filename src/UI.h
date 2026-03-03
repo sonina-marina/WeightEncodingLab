@@ -32,6 +32,8 @@ class MainWindow {
         Fl_Button* btnDeCode;
         Fl_Button* btnExit;
 
+    // Cosmetics
+        Fl_Box* from;
 
     // Outputs
         Fl_Output* codeOutput;

@@ -7,25 +7,25 @@ MainWindow::MainWindow(int w, int h, const char* name) {
     window = new Fl_Window(w, h, name);
     window->clear_border();
     window->color(FL_WHITE);
-    auto title = std::make_unique<Fl_Box>(200, 15, 640, 30, "Равновесный код");
+    auto title = std::make_unique<Fl_Box>(200, 15, 760, 30, "Равновесный код");
     title->labelsize(14);
     title->align(FL_ALIGN_LEFT_TOP);
     window->add(title.release());
 
-    Fl_Box* separator = new Fl_Box(0, 40, 640, 2);
+    Fl_Box* separator = new Fl_Box(0, 40, 760, 2);
     separator->box(FL_FLAT_BOX);
     separator->color(FL_BLACK);
     window->add(separator);
 
     int firstBorder = 60;
-    int secondBorder = 430;
+    int secondBorder = 550;
     int yCoord = 70;
     int step = 75;
-    int longField = 300;
+    int longField = 420;
     int shortField = 150;
-    int littleField = 50;
+    int littleField = 70;
     int littleStep = 30 + littleField;
-    int fieldHight =35;
+    int fieldHight = 35;
 
     //------------------------1 line---------------------------------
     infInput = new Fl_Input(firstBorder, yCoord, longField, fieldHight, "Информационная последовательность");
@@ -42,9 +42,10 @@ MainWindow::MainWindow(int w, int h, const char* name) {
     //------------------------2 line---------------------------------
     mOutput = new Fl_Output(firstBorder, yCoord, littleField, fieldHight, "m");
     mOutput->align(FL_ALIGN_TOP);
+    from = new Fl_Box(firstBorder + 1*littleField, yCoord, littleField, fieldHight, "из");
     nOutput = new Fl_Output(firstBorder + 2*littleField, yCoord, littleField, fieldHight, "n");
     nOutput->align(FL_ALIGN_TOP);
-    lOutput = new Fl_Output(firstBorder + 3*littleField + 25, yCoord, littleField, fieldHight, "l");
+    lOutput = new Fl_Output(firstBorder + 3*littleField + 35, yCoord, littleField, fieldHight, "l");
     lOutput->align(FL_ALIGN_TOP);
     ROutput = new Fl_Output(firstBorder + 5*littleField, yCoord, littleField, fieldHight, "R");
     ROutput->align(FL_ALIGN_TOP);
@@ -81,7 +82,7 @@ MainWindow::MainWindow(int w, int h, const char* name) {
     m2Output->align(FL_ALIGN_TOP);
     R2Output = new Fl_Output(firstBorder + 2*littleField, yCoord, littleField, fieldHight, "R");
     R2Output->align(FL_ALIGN_TOP);
-    rOutput = new Fl_Output(firstBorder + 3*littleField + 25, yCoord, littleField, fieldHight, "r");
+    rOutput = new Fl_Output(firstBorder + 3*littleField + 35, yCoord, littleField, fieldHight, "r");
     rOutput->align(FL_ALIGN_TOP);
     JOutput = new Fl_Output(firstBorder + 5*littleField, yCoord, littleField, fieldHight, "J");
     JOutput->align(FL_ALIGN_TOP);
